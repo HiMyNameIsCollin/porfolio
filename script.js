@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded',function(event){
-	let animating = false
-
+	let pageTwoAnimating = false
 	function typeText(){
 		  // array with texts to type in typewriter
 	  var dataText = [ "Hi, Im Collin.", "Former Chef.", "Television enthusiast.", "Full Stack Web Developer"];
@@ -27,10 +26,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 	  // start a typewriter animation for a text in the dataText array
 	   function StartTextAnimation(i) {
 	     if (typeof dataText[i] == 'undefined'){
-	     	animating = false
-	        setTimeout(function() {
-	          StartTextAnimation(0);
-	        }, 20000);
+	     	pageTwoAnimating = false
 	     }
 	     // check if dataText[i] exists
 	    if (i < dataText[i].length) {
@@ -54,10 +50,20 @@ document.addEventListener('DOMContentLoaded',function(event){
 	    );
 	};
 	const textBox = document.getElementsByClassName('textBox')
+	const commentBox = document.getElementById('commentBox')
 	document.addEventListener('scroll', function(){
-		if(isInViewport(textBox[0]) && animating === false){
-			animating = true
+		if(isInViewport(textBox[0]) && pageTwoAnimating === false){
+			pageTwoAnimating = true
 			typeText()
+		}
+	})
+	document.addEventListener('scroll', function(){
+		if(isInViewport(commentBox)){
+			const path = document.getElementsByClassName('path849')
+			path[0].style.animation = 'fill 3s linear forwards'
+			setTimeout(() => {
+				commentBox.classList.add('scale-in-center')
+			}, 2500)
 		}
 	})
 })
