@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded',function(event){
 	let pageTwoAnimating = false
+	let outroAnimated = false
 	function typeText(){
 		  // array with texts to type in typewriter
 	  var dataText = [ "Hi, Im Collin.", "Former Chef.", "Television enthusiast.", "Full Stack Web Developer"];
@@ -49,21 +50,45 @@ document.addEventListener('DOMContentLoaded',function(event){
 	        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
 	    );
 	};
+	const nameLogo = document.getElementById('nameLogo')
+	const pageToken = document.getElementById('page2Token')
 	const textBox = document.getElementsByClassName('textBox')
 	const commentBox = document.getElementById('commentBox')
-	document.addEventListener('scroll', function(){
-		if(isInViewport(textBox[0]) && pageTwoAnimating === false){
-			pageTwoAnimating = true
-			typeText()
-		}
-	})
+	const progressBar = document.getElementById('progressBar')
+	const card = document.getElementsByClassName('card')
+
 	document.addEventListener('scroll', function(){
 		if(isInViewport(commentBox)){
-			const path = document.getElementsByClassName('path849')
-			path[0].style.animation = 'fill 3s linear forwards'
+			progressBar.style.opacity = '0'
+			const path849 = document.querySelector('.path849')
+			const path850 = document.querySelector('.path850')
+			const path851 = document.querySelector('.path851')
+			const path852 = document.querySelector('.path852')
+			path849.style.animation = 'fill849 3s linear forwards'
+			path850.style.animation = 'fill850 3s linear forwards'
+			path851.style.animation = 'fill851 3s linear forwards'
+			path852.style.animation = 'fill852 3s linear forwards'
 			setTimeout(() => {
 				commentBox.classList.add('scale-in-center')
 			}, 2500)
+		}else if(isInViewport(textBox[0]) && pageTwoAnimating === false) {
+			pageTwoAnimating = true
+			typeText()
+
+		} else {
+			progressBar.style.opacity = '1'
 		}
 	})
 })
+
+/*#####################PROGRESS BAR #############################*/
+
+function progress(){
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.documentElement.style.setProperty('--progress', scrolled + '2' + '%')
+
+}
+
+window.onscroll = progress
