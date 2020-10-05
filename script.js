@@ -53,12 +53,13 @@ document.addEventListener('DOMContentLoaded',function(event){
 	const nameLogo = document.getElementById('nameLogo')
 	const pageToken = document.getElementById('page2Token')
 	const textBox = document.getElementsByClassName('textBox')
-	const commentBox = document.getElementById('commentBox')
+	const contactBox = document.getElementById('contactBox')
 	const progressBar = document.getElementById('progressBar')
 	const card = document.getElementsByClassName('card')
 
 	document.addEventListener('scroll', function(){
-		if(isInViewport(commentBox)){
+		if(isInViewport(contactBox)){
+			document.getElementById('page4Arrow').style.opacity = 0
 			progressBar.style.opacity = '0'
 			const path849 = document.querySelector('.path849')
 			const path850 = document.querySelector('.path850')
@@ -69,7 +70,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 			path851.style.animation = 'fill851 3s linear forwards'
 			path852.style.animation = 'fill852 3s linear forwards'
 			setTimeout(() => {
-				commentBox.classList.add('scale-in-center')
+				contactBox.classList.add('scale-in-center')
 			}, 2500)
 		}else if(isInViewport(textBox[0]) && pageTwoAnimating === false) {
 			pageTwoAnimating = true
