@@ -5,6 +5,9 @@ let typeText
 
 /*##############PAGE TWO TYPING ANIMATION##############*/
 document.addEventListener('DOMContentLoaded',function(event){
+
+
+/*##################TYPING ANIMATION ###################################*/
 	typeText = function(){
 	  var dataText = [ "Hi, Im Collin.", "Former Chef.", "Television enthusiast.", "Full Stack Web Developer."];
 	 
