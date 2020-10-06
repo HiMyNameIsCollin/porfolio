@@ -6,6 +6,8 @@ let typeText
 /*##############PAGE TWO TYPING ANIMATION##############*/
 document.addEventListener('DOMContentLoaded',function(event){
 
+	const arrow = document.getElementsByClassName('arrow')
+	arrow[0].style.opacity = 1
 
 /*##################TYPING ANIMATION ###################################*/
 	typeText = function(){
