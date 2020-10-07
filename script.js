@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 				const modalSpan = document.getElementById('modalSpan')
 				const modalP = document.getElementById('modalP')
 				modalSpan.style.display = 'block'
+				console.log(modalLinks)
 				if(i === 0){
 					title.innerText = 'Behind The Bar'
 					image.src = './assets/BTB.png'
