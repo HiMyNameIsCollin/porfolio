@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 
 	const arrow = document.getElementsByClassName('arrow')
 	arrow[0].style.opacity = 1
+	arrow[1].style.opacity = 1
 
 /*##################TYPING ANIMATION ###################################*/
 	typeText = function(){
@@ -102,7 +103,7 @@ document.addEventListener('scroll', function(){
 	const textBox = document.getElementsByClassName('textBox')
 	const contactBox = document.getElementById('contactBox')
 	if(isInViewport(contactBox)){
-		document.getElementById('page4Arrow').style.opacity = 0
+		document.getElementById('page4Arrow').style.opacity = '0'
 		document.getElementById('progressBar').style.opacity = '0'
 		const path849 = document.querySelector('.path849')
 		const path850 = document.querySelector('.path850')
