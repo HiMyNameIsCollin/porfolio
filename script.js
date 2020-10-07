@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded',function(event){
 			c.addEventListener('click', function handleModal(){
 				const modal = document.getElementById('modal')
 				const close = document.getElementById('modalClose')
-				const textBox = document.getElementById('textBox')
 				const image = document.getElementById('modalImg')
 				const title = document.getElementById('modalTitle')
 				const modalLinks = document.getElementsByClassName('modalLink')
