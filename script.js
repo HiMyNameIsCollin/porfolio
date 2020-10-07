@@ -51,17 +51,18 @@ document.addEventListener('DOMContentLoaded',function(event){
 				const textBox = document.getElementById('textBox')
 				const image = document.getElementById('modalImg')
 				const title = document.getElementById('modalTitle')
-				const modalLinks = document.getElementById('modalLinks')
+				const modalLinks = document.getElementsByClassName('modalLink')
 				const modalSpan = document.getElementById('modalSpan')
 				const modalP = document.getElementById('modalP')
 				modalSpan.style.display = 'block'
-				console.log(modalLinks)
 				if(i === 0){
 					title.innerText = 'Behind The Bar'
 					image.src = './assets/BTB.png'
 					image.alt = 'Behind The Bar'
 					modalSpan.innerText = `- 'Kitchen Confidental meets the 21st century.' `
 					modalP.innerText = `Built with the MERN stack, this web application is for users in the Toronto restaurant industry to share the latest gossip, issues, and drama occuring 'Behind the Bar.' `
+					modalLinks[0].href='https://github.com/HiMyNameIsCollin/c2cChat'
+					modalLinks[1].href='http://btb-to.herokuapp.com/'
 				} else if(i === 1) {
 					title.innerText = 'Connect to Collin'
 					image.alt = 'Connect to Collin'
@@ -69,12 +70,16 @@ document.addEventListener('DOMContentLoaded',function(event){
 					modalSpan.innerText = ''
 					modalSpan.style.display = 'none'
 					modalP.innerText = `Built with the MERN stack, and the Socket.IO library. Bluntly put, 'Connect to Collin' allows you to do just that, connect to Collin. `
+					modalLinks[0].href='https://github.com/HiMyNameIsCollin/c2cChat'
+					modalLinks[1].href='http://connect2collin.herokuapp.com/'
 				} else if(i === 2) {
 					title.innerText = 'Quicky Quiz'
 					image.alt = 'Quicky Quiz'
 					image.src = './assets/QQ.png'
 					modalSpan.innerText = `- 'My first project' `
 					modalP.innerText = `Utilizing the OpenTriviaDB API, this React Application is a multiplayer quiz.`
+					modalLinks[0].href='https://github.com/HiMyNameIsCollin/Quicky-Quiz'
+					modalLinks[1].href='https://himynameiscollin.github.io/Quicky-Quiz/'
 				}
 				modal.style.display = 'grid'
 				close.addEventListener('click', function(){
