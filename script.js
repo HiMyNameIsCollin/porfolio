@@ -7,8 +7,10 @@ let typeText
 document.addEventListener('DOMContentLoaded',function(event){
 
 	const arrow = document.getElementsByClassName('arrow')
-	arrow[0].style.opacity = 1
-	arrow[1].style.opacity = 1
+	setTimeout(() => {
+		arrow[0].style.opacity = 1
+		arrow[1].style.opacity = 1
+	}, 5000);
 
 /*##################TYPING ANIMATION ###################################*/
 	typeText = function(){
